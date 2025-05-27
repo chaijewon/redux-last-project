@@ -232,58 +232,25 @@ function Home(){
 
                                         <div className="single-widget-area popular-post-widget">
                                             <div className="widget-title text-center">
-                                                <h6>Populer Post</h6>
+                                                <h6>부산에 가면</h6>
                                             </div>
 
-                                            <div className="single-populer-post d-flex">
-                                                <img src="img/sidebar-img/1.jpg" alt=""/>
-                                                    <div className="post-content">
-                                                        <a href="#">
-                                                            <h6>Top Wineries To Visit In England</h6>
-                                                        </a>
-                                                        <p>Tuesday, October 3, 2017</p>
+                                            {
+                                                mainData.iList && mainData.iList.map((loc) =>
+                                                    <div className="single-populer-post d-flex">
+                                                        <img src={loc.poster}/>
+                                                        <div className="post-content">
+                                                            <a href="#">
+                                                                <h6>{loc.title}</h6>
+                                                            </a>
+                                                            <p>{loc.address}</p>
+                                                        </div>
                                                     </div>
-                                            </div>
+                                                )
+                                            }
 
-                                            <div className="single-populer-post d-flex">
-                                                <img src="img/sidebar-img/2.jpg" alt=""/>
-                                                    <div class="post-content">
-                                                        <a href="#">
-                                                            <h6>The 8 Best Gastro Pubs In Bath</h6>
-                                                        </a>
-                                                        <p>Tuesday, October 3, 2017</p>
-                                                    </div>
-                                            </div>
 
-                                            <div className="single-populer-post d-flex">
-                                                <img src="img/sidebar-img/3.jpg" alt=""/>
-                                                    <div className="post-content">
-                                                        <a href="#">
-                                                            <h6>Zermatt Unplugged the best festival</h6>
-                                                        </a>
-                                                        <p>Tuesday, October 3, 2017</p>
-                                                    </div>
-                                            </div>
 
-                                            <div className="single-populer-post d-flex">
-                                                <img src="img/sidebar-img/4.jpg" alt=""/>
-                                                    <div className="post-content">
-                                                        <a href="#">
-                                                            <h6>Harrogate's Top 10 Independent Eats</h6>
-                                                        </a>
-                                                        <p>Tuesday, October 3, 2017</p>
-                                                    </div>
-                                            </div>
-
-                                            <div className="single-populer-post d-flex">
-                                                <img src="img/sidebar-img/5.jpg" alt=""/>
-                                                    <div className="post-content">
-                                                        <a href="#">
-                                                            <h6>Eating Out On A Budget In Oxford</h6>
-                                                        </a>
-                                                        <p>Tuesday, October 3, 2017</p>
-                                                    </div>
-                                            </div>
                                         </div>
 
 
