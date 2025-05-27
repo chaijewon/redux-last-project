@@ -55,6 +55,7 @@ export const fetchMainData = () => dispatch => {
             type:'FETCH_MAIN_DATA',
             payload:res.data
         }
+        console.log(res.data)
         dispatch(action); // reducer로 전송
     })
 }

@@ -7,6 +7,7 @@ const mainState={
 // dispatch({type:찾기, payload:데이터}
 // ... : 복제
 export default function(state=mainState, action){
+    console.log("reducer call"+action.type);
     switch(action.type){
         case FETCH_MAIN_DATA:
             return {
