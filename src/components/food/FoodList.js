@@ -6,6 +6,30 @@ import {Link} from "react-router-dom";
    DB
    템플릿
    메인페이지 => 메뉴
+
+   자기 소개서
+    문제 해결 능력 => IT직무
+    의사 소통 능력 / 팀워크
+    적응력
+    ----- 변화에 따른 기술 환경 (새로운 기술)
+    자기학습 주도 : 학습 => GIT / 로션 ... 정리
+    ---------------------------------------
+    강조 : 강점 => 경험
+
+    Back-End => Python => AI
+                Spring-Boot => Spring-Framework
+                               ----------------- 사용
+                AWS / Docker
+    Front
+      React / AngularJS / VueJS / Svelte / JQuery
+      const [curpage, setCurpage] = useState(1);
+      data(){
+         return {
+
+         }
+      }
+      let curpage=$state()
+
  */
 function FoodList(){
     // action함수호출 => reducer => store
@@ -76,7 +100,9 @@ function FoodList(){
                                     <div className="single-post wow fadeInUp" data-wow-delay="0.1s">
 
                                         <div className="post-thumb">
-                                            <img src={"https://www.menupan.com" + food.poster}/>
+                                            <Link to={"/food/detail/"+food.fno}>
+                                              <img src={"https://www.menupan.com" + food.poster}/>
+                                            </Link>
                                         </div>
 
                                         <div className="post-content">
@@ -110,9 +136,9 @@ function FoodList(){
                                                     </div>
                                                 </div>
                                             </div>
-                                            <a href="#">
+                                            <Link to={"/food/detail/"+food.fno}>
                                                 <h4 className="post-headline">{food.name}</h4>
-                                            </a>
+                                            </Link>
                                         </div>
                                     </div>
                                 </div>
