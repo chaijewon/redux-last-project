@@ -18,20 +18,38 @@ function FoodList(){
 
     const foodList=useSelector(state => state.foods.food_list);
 
+    // 이벤트 처리
+    const prev=()=>{
+        setCurpage(foodList.startPage-1)
+    }
+    const next=()=>{
+        setCurpage(foodList.endPage+1)
+    }
+    const pageChange=(page)=>{
+        setCurpage(page);
+    }
     let row=[]
 
         if (foodList.startPage > 1) {
             row.push(<li className="page-item">
-                <a className="page-link" href="#">Next <i
+                <a className="page-link" onClick={prev}>Prev <i
                     className="fa fa-angle-double-left" aria-hidden="true"></i></a>
             </li>)
         }
         for (let i = foodList.startPage; i <= foodList.endPage; i++) {
-            row.push(<li className="page-item"><a className="page-link" href="#">{i}</a></li>)
+            if(i===foodList.curpage)
+            {
+                row.push(<li className="page-item active"><a className="page-link" onClick={()=>pageChange(i)}>{i}</a></li>)
+            }
+            else
+            {
+                row.push(<li className="page-item"><a className="page-link" onClick={()=>pageChange(i)}>{i}</a></li>)
+            }
+
         }
         if (foodList.endPage < foodList.totalpage) {
             row.push(<li className="page-item">
-                <a className="page-link" href="#">Next <i
+                <a className="page-link" onClick={next}>Next <i
                     className="fa fa-angle-double-right" aria-hidden="true"></i></a>
             </li>)
         }
