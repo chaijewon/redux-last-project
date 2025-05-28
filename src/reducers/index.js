@@ -5,9 +5,11 @@ import {combineReducers} from "redux";
 import mainReducer from "./mainReducer";
 import foodReducer from "./foodReducer";
 import youtubeReducer from "./youtubeReducer";
+import infoReducer from "./infoReducer";
 // mains.main_data mains.main_detail => 변수 선택
 export default combineReducers({
     mains: mainReducer,
     foods: foodReducer,
-    youtubes: youtubeReducer
+    youtubes: youtubeReducer,
+    infos: infoReducer
 })

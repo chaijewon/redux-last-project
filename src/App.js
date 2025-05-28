@@ -22,6 +22,12 @@ import InfoList from "./components/info/InfoList";
      3) store에 저장 : 한개만 사용 => Reduce를 통해서 저장
          | 상태 관리(state) oldState , newState
      4) component: store에 있는 데이터 읽어 오는 방식 => useSelector
+
+     React VS Vue   장단점 / 사용처
+     -------------
+     React => Redux , React-Query
+
+
  */
 function App() {
   // store => 등록된 모든 컴포넌트가 사용이 가능
@@ -35,7 +41,7 @@ function App() {
                <Route path={"/food/find"} element={<FoodFind/>} />
                <Route path={"/food/detail/:fno"} element={<FoodDetail/>} />
                <Route path={"/youtube/find"} element={<YoutubeFind/>} />
-               <Route path={"/info/list/:cno"} element={<InfoList/>} />
+               <Route path={"/info/list/:cno/:page"} element={<InfoList/>} />
             </Routes>
           <Footer />
         </Router>

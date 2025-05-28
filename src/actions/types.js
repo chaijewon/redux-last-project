@@ -8,6 +8,7 @@ export const FETCH_FOOD_FIND='FETCH_FOOD_FIND'
 export const FETCH_INFO_LIST='FETCH_FOOD_LIST'
 export const FETCH_INFO_DETAIL='FETCH_INFO_DETAIL'
 export const FETCH_INFO_FIND='FETCH_INFO_FIND'
+export const RESET = 'RESET'
 // youtube
 export const FETCH_YOUTUBE_FIND='FETCH_YOUTUBE_FIND'
 // board 
