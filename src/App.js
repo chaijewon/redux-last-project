@@ -7,6 +7,8 @@ import {Provider} from "react-redux";
 import FoodList from "./components/food/FoodList";
 import FoodFind from "./components/food/FoodFind";
 import FoodDetail from "./components/food/FoodDetail";
+import YoutubeFind from "./components/youtube/YoutubeFind";
+import InfoList from "./components/info/InfoList";
 // <함수명> => return에 있는 HTML을 출력
 // 모든 component => 반드시 return을 포함하고 있어야 된다 (return안에는 HTML포함)
 /*
@@ -32,6 +34,8 @@ function App() {
                <Route path={"/food/list"} element={<FoodList/>} />
                <Route path={"/food/find"} element={<FoodFind/>} />
                <Route path={"/food/detail/:fno"} element={<FoodDetail/>} />
+               <Route path={"/youtube/find"} element={<YoutubeFind/>} />
+               <Route path={"/info/list/:cno"} element={<InfoList/>} />
             </Routes>
           <Footer />
         </Router>
