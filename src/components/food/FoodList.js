@@ -17,6 +17,25 @@ function FoodList(){
     },[curpage]);
 
     const foodList=useSelector(state => state.foods.food_list);
+
+    let row=[]
+
+        if (foodList.startPage > 1) {
+            row.push(<li className="page-item">
+                <a className="page-link" href="#">Next <i
+                    className="fa fa-angle-double-left" aria-hidden="true"></i></a>
+            </li>)
+        }
+        for (let i = foodList.startPage; i <= foodList.endPage; i++) {
+            row.push(<li className="page-item"><a className="page-link" href="#">{i}</a></li>)
+        }
+        if (foodList.endPage < foodList.totalpage) {
+            row.push(<li className="page-item">
+                <a className="page-link" href="#">Next <i
+                    className="fa fa-angle-double-right" aria-hidden="true"></i></a>
+            </li>)
+        }
+
     return (
         <>
             <div className="breadcumb-area" style={{"backgroundImage": "url(/img/bg-img/breadcumb.jpg)"}}>
@@ -39,7 +58,7 @@ function FoodList(){
                                     <div className="single-post wow fadeInUp" data-wow-delay="0.1s">
 
                                         <div className="post-thumb">
-                                            <img src={"https://www.menupan.com"+food.poster}/>
+                                            <img src={"https://www.menupan.com" + food.poster}/>
                                         </div>
 
                                         <div className="post-content">
@@ -58,7 +77,8 @@ function FoodList(){
                                                 <div className="post-comment-share-area d-flex">
 
                                                     <div className="post-favourite">
-                                                        <a href="#"><i className="fa fa-heart-o" aria-hidden="true"></i> {food.likecount}</a>
+                                                        <a href="#"><i className="fa fa-heart-o"
+                                                                       aria-hidden="true"></i> {food.likecount}</a>
                                                     </div>
 
                                                     <div className="post-comments">
@@ -80,6 +100,21 @@ function FoodList(){
                                 </div>
                             )
                         }
+                        {/* 페이지 나누기 */}
+                        <div className="col-12">
+                            <div className="pagination-area d-sm-flex mt-15">
+                                <nav aria-label="#">
+                                    <ul className="pagination">
+                                        {row}
+                                    </ul>
+                                </nav>
+                                <div className="page-status">
+                                    <p>Page {foodList.curpage} of {foodList.totalpage} results</p>
+                                </div>
+                            </div>
+                        </div>
+
+
                     </div>
                 </div>
             </section>
