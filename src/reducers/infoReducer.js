@@ -19,8 +19,6 @@ export default function(state=infoState, action){
                 ...state,
                 info_data: action.payload
             }
-        case RESET:
-            return infoState;
         default:
             return state;
     }

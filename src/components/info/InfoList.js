@@ -12,18 +12,22 @@ import {fetchInfoList,resetState} from "../../actions/infoActions";
      ---- 데이터형을 구분하지 않는다
  */
 function InfoList(){
-    const {cno,page}=useParams()
+
     const dispatch=useDispatch();
     const [curpage, setCurpage]=useState(1);
-
+    const [cno,setCno]=useState(1);
     useEffect(()=>{
-            // store에 저장
-             dispatch(fetchInfoList(cno,curpage));
-    },[cno,curpage])
+             // store에 저장
+        dispatch(fetchInfoList(cno,curpage));
+
+    },[cno,curpage]);
 
     // store로부터 데이터 읽기
     const infoList=useSelector(state => state.infos.info_data)
-
+    const change=(no)=>{
+        setCno(no)
+        setCurpage(1)
+    }
     const prev=()=>{
         setCurpage(infoList.curpage>1?infoList.curpage-1:infoList.curpage)
     }
@@ -53,6 +57,15 @@ function InfoList(){
                     </div>
                 </div>
             </div>
+            <section className="archive-area section_padding_80">
+                <div className="container">
+                    <div className="row">
+                        <button className={"btn-info btn-sm"} onClick={()=>change(1)}>명소</button>
+                        <button className={"btn-warning btn-sm"} onClick={()=>change(3)}>쇼핑</button>
+                        <button className={"btn-success btn-sm"} onClick={()=>change(2)}>음식</button>
+                    </div>
+                </div>
+            </section>
             <section className="archive-area section_padding_80">
                 <div className="container">
                     <div className="row">
