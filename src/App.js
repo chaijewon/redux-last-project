@@ -10,6 +10,7 @@ import FoodDetail from "./components/food/FoodDetail";
 import YoutubeFind from "./components/youtube/YoutubeFind";
 import InfoList from "./components/info/InfoList";
 import BoardList from "./components/board/BoardList";
+import BoardInsert from "./components/board/BoardInsert";
 // <함수명> => return에 있는 HTML을 출력
 // 모든 component => 반드시 return을 포함하고 있어야 된다 (return안에는 HTML포함)
 /*
@@ -44,6 +45,7 @@ function App() {
                <Route path={"/youtube/find"} element={<YoutubeFind/>} />
                <Route path={"/info/list/:no"} element={<InfoList/>} />
                <Route path={"/board/list"} element={<BoardList/>} />
+               <Route path={"/board/insert"} element={<BoardInsert/>} />
             </Routes>
           <Footer />
         </Router>
