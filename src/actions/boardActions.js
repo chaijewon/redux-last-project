@@ -1,5 +1,5 @@
 import {BOARD_LIST,BOARD_INSERT,BOARD_UPDATE,BOARD_DELETE,
-BOARD_UPDATE_OK,BOARD_DETAIL} from './types'
+BOARD_UPDATE_OK,BOARD_DETAIL,RESET} from './types'
 
 /*
         React : 화면 구현 => View기능만 수행
@@ -117,4 +117,11 @@ export const boardDelete = (no,pwd) => dispatch => {
             }
             dispatch(action)
         })
+}
+export const boardReset = () => dispatch => {
+    const action = {
+        type: RESET,
+        payload: {}
+    }
+    dispatch(action)
 }

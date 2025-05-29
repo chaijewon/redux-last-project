@@ -1,7 +1,7 @@
 import {useState, useEffect, Fragment, useRef} from "react";
 import {useNavigate,useParams} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
-import {boardDelete} from "../../actions/boardActions";
+import {boardDelete,boardReset} from "../../actions/boardActions";
 
 function BoardDelete(){
         // BoardDetail => no값을 받는다
@@ -30,6 +30,7 @@ function BoardDelete(){
             if(delData.msg==='yes')
             {
                 nav('/board/list')
+                dispatch(boardReset())
             }
             if(delData.msg==='no')
             {

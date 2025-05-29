@@ -1,5 +1,5 @@
 import {BOARD_LIST,BOARD_INSERT,BOARD_UPDATE,BOARD_DELETE,
-    BOARD_UPDATE_OK,BOARD_DETAIL} from '../actions/types'
+    BOARD_UPDATE_OK,BOARD_DETAIL,RESET} from '../actions/types'
 /*
       Map => 여러개 묶어서 전송
              list , curpage , totalpage  =>
@@ -49,6 +49,11 @@ export default function (state = boardState, action){
            return {
                ...state,
                result:action.payload
+           }
+       case RESET:
+           return {
+               ...state,
+               result: action.payload
            }
        default:
            return state;

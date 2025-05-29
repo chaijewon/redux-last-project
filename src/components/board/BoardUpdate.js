@@ -1,6 +1,6 @@
 import {useDispatch, useSelector} from "react-redux";
 import {useEffect, useState, useRef, Fragment, use} from "react";
-import {boardUpdate,boardUpdateOk} from "../../actions/boardActions";
+import {boardUpdate,boardUpdateOk,boardReset} from "../../actions/boardActions";
 import {useNavigate,useParams} from "react-router-dom";
 // <unput type="" id , class > <unput type="" ref >
 function BoardUpdate() {
@@ -66,6 +66,7 @@ function BoardUpdate() {
     useEffect(()=>{
         if(result.msg==='yes'){
             nav('/board/detail/'+no)
+            dispatch(boardReset());
         }
         else if(result.msg==='no'){
             alert("비밀번호가 틀립니다")
