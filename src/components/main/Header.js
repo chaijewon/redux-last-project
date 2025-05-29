@@ -99,7 +99,7 @@ function Header() {
                                             <Link className="nav-link" to={"/youtube/find"}>부산 동영상</Link>
                                         </li>
                                         <li className="nav-item">
-                                            <a className="nav-link" href="#">커뮤니티</a>
+                                            <Link className="nav-link" to={"/board/list"}>커뮤니티</Link>
                                         </li>
                                         <li className="nav-item">
                                             <a className="nav-link" href="archive.html">부산 여행 뉴스</a>

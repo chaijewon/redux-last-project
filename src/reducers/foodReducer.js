@@ -26,6 +26,14 @@ const foodState={
          types는 종시 처리
          action 함수는 따로 처리
          reducer 따로 처리 ==> index에서 한번에 모아서 처리
+
+         프로그램
+         1. 분리 작업 : 기능 => 객체지향 (재사용)
+                              | 기능 : 클래스
+                              | 리액트/Vue => Component
+         2. 공통 기능
+         3. 조립 : => main() , App()
+
  */
 export default function(state = foodState, action){
     switch(action.type){
