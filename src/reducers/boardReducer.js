@@ -35,6 +35,11 @@ export default function (state = boardState, action){
                ...state,
                board_detail:action.payload
            }
+       case BOARD_DELETE:
+           return {
+               ...state,
+               result:action.payload
+           }
        default:
            return state;
    }

@@ -58,7 +58,7 @@ function BoardDetail() {
                                 <tr>
                                     <td colSpan={"4"} className={"text-right"}>
                                         <Link to={"#"} className={"btn btn-xs btn-danger"}>수정</Link>
-                                        <Link to={"#"} className={"btn btn-xs btn-primary"}>삭제</Link>
+                                        <Link to={"/board/delete/"+no} className={"btn btn-xs btn-primary"}>삭제</Link>
                                         <Link to={"/board/list"} className={"btn btn-xs btn-success"}>목록</Link>
                                     </td>
                                 </tr>
