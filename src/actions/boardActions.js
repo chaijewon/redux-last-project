@@ -79,7 +79,34 @@ export const boardDetail = (no) => dispatch => {
     })
 }
 // update-data
+export const boardUpdate = (no) => dispatch => {
+    axios.get(`http://localhost/board/update_react/${no}`)
+    .then(res => {
+        const action={
+            type:BOARD_UPDATE,
+            payload:res.data
+        }
+        dispatch(action)
+    })
+}
 // update
+export const boardUpdateOk = (upDateData) => dispatch => {
+    axios({
+        method:'put',
+        baseURL:'http://localhost',
+        url:`/board/update_react_ok`,
+        data:upDateData,
+        headers: {
+            'Content-Type':'application/json'
+        }
+    }).then(res => {
+        const action={
+            type:BOARD_UPDATE_OK,
+            payload:res.data
+        }
+        dispatch(action) // reducer
+    })
+}
 // delete
 export const boardDelete = (no,pwd) => dispatch => {
     axios.delete(`http://localhost/board/delete_react/${no}/${pwd}`)
