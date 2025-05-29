@@ -10,12 +10,32 @@ import {fetchInfoList,resetState} from "../../actions/infoActions";
      a==b  a===b
            ------ 데이터형 구분
      ---- 데이터형을 구분하지 않는다
+
+
  */
 function InfoList(){
-
+    const {no}=useParams()
     const dispatch=useDispatch();
     const [curpage, setCurpage]=useState(1);
-    const [cno,setCno]=useState(1);
+    const [cno,setCno]=useState(no);
+    /*
+        useEffect(()=>{
+             // store에 저장
+          setCurpage(1)
+
+        },[cno]);
+        useEffect(()=>{
+             // store에 저장
+         dispatch(fetchInfoList(cno,curpage));
+
+        },[curpage]);
+     */
+    useEffect(()=>{
+        // store에 저장
+        setCurpage(1) // 화면 변경시마다 한번만 수행 => mounted()
+        setCno(no);
+
+    },[no]);
     useEffect(()=>{
              // store에 저장
         dispatch(fetchInfoList(cno,curpage));

@@ -2,8 +2,61 @@ import {useState,useEffect,Fragment} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {useNavigate,useParams} from "react-router-dom";
 import {fetchFoodDetail} from "../../actions/foodActions";
+/* global kakao */
 // redirect , useRef , useCallback , useMemo
 // => history.back() Navigate
+/*const MapLocation=(props)=>{
+    const [state,setState] = useState({
+        // 위도 / 경도
+        center:{lat:null,lng:null},
+        isShow:true // 지도를 이동할때 부드럽게 출력
+    })
+    useEffect(() => {
+        // 일반 주소를 위도.경도를 출력
+        const geocoder = new kakao.maps.services.Geocoder();
+        // 주소 입력 => 좌표 변환
+        let callback=function(result,status){
+            if(status==kakao.maps.services.Status.OK){
+                // 변환이 가능한 주소가 들어 온 경우
+                const newSearch=result[0];
+                setState({
+                    center:{lat:newSearch.y,lng:newSearch.x}
+                })
+            }
+        }
+        geocoder.addressSearch(`${props.address}`,callback)
+        // 주소를 위도/경도를 찾아주는 역할
+    }, []);
+    return (
+        <div>
+            <Map center={state.center}
+                 isPanto={state.isShow}
+                 style={{
+                     width:"600px",
+                     height:"500px",
+                     borderRadius:'20px'
+                 }}
+            >
+                <MapMarker position={state.center}
+                           style={{border:'transparent'}}
+                >
+                    <div
+                        style={{
+                            color:'gray',
+                            fontSize:'19px',
+                            fontWeight:'700',
+                            border:'4px solid gray',
+                            borderRadius:'10px',
+                            padding:'2px'
+                        }}
+                    >
+                        {props.name}
+                    </div>
+                </MapMarker>
+            </Map>
+        </div>
+    )
+}*/
 
 function FoodDetail() {
     const {fno} = useParams();
@@ -79,6 +132,11 @@ function FoodDetail() {
                                 <td className={"text-right"}>
                                     <button className={"btn-sm btn-danger"} onClick={listClick}>목록</button>
                                 </td>
+                            </tr>
+                            <tr>
+                                <div>
+                                    {/*<MapLocation address={foodDetail.address} name={foodDetail.name}/>*/}
+                                </div>
                             </tr>
                             </tbody>
                         </table>

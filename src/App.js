@@ -41,7 +41,7 @@ function App() {
                <Route path={"/food/find"} element={<FoodFind/>} />
                <Route path={"/food/detail/:fno"} element={<FoodDetail/>} />
                <Route path={"/youtube/find"} element={<YoutubeFind/>} />
-               <Route path={"/info/list"} element={<InfoList/>} />
+               <Route path={"/info/list/:no"} element={<InfoList/>} />
             </Routes>
           <Footer />
         </Router>
