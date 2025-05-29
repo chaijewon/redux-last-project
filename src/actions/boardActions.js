@@ -68,6 +68,16 @@ export const boardInsert = (insertData) => dispatch => {
     })
 }
 // detail
+export const boardDetail = (no) => dispatch => {
+    axios.get(`http://localhost/board/detail_react/${no}`)
+    .then(res => {
+        const action={
+            type:BOARD_DETAIL,
+            payload:res.data
+        }
+        dispatch(action) // reducer
+    })
+}
 // update-data
 // update
-// delete 
+// delete

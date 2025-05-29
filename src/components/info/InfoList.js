@@ -7,7 +7,7 @@ import {fetchInfoList,resetState} from "../../actions/infoActions";
      let a=1
      let b="1"
 
-     a==b  a===b
+     a==b  a===b (a!==b)
            ------ 데이터형 구분
      ---- 데이터형을 구분하지 않는다
 

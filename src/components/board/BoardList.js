@@ -23,7 +23,7 @@ function BoardList() {
     const today=useSelector(state => state.boards.board_list.today)
     // 이벤트
     const prev=()=>{
-        setCurpage(curpage>1?curpage-1:curpage-1)
+        setCurpage(curpage>1?curpage-1:curpage)
     }
     const next=()=>{
         setCurpage(curpage<totalpage?curpage+1:curpage)
@@ -70,7 +70,8 @@ function BoardList() {
                                     board_list && board_list.map((row,index)=>
                                         <tr key={index}>
                                             <td width={"10%"} className={"text-center"}>{row.no}</td>
-                                            <td width={"45%"}>{row.subject}&nbsp;
+                                            <td width={"45%"}>
+                                                <Link to={"/board/detail/"+row.no}>{row.subject}</Link>&nbsp;
                                                 {
                                                     today===row.regdate && <sup style={{"color":"red"}}>new</sup>
                                                 }

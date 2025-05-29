@@ -30,6 +30,11 @@ export default function (state = boardState, action){
                ...state,
                result:action.payload
            }
+       case BOARD_DETAIL:
+           return {
+               ...state,
+               board_detail:action.payload
+           }
        default:
            return state;
    }
