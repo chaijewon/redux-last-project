@@ -2,11 +2,12 @@ import {useState,useEffect,Fragment} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {useNavigate,useParams} from "react-router-dom";
 import {fetchFoodDetail} from "../../actions/foodActions";
+import FoodMap from "./FoodMap";
 /* global kakao */
 // redirect , useRef , useCallback , useMemo
 // => history.back() Navigate
 /*const MapLocation=(props)=>{
-    const [state,setState] = useState({
+    const [state,setState] = useState({im
         // 위도 / 경도
         center:{lat:null,lng:null},
         isShow:true // 지도를 이동할때 부드럽게 출력
@@ -62,6 +63,7 @@ function FoodDetail() {
     const {fno} = useParams();
     const dispatch = useDispatch();
     const nav=useNavigate();
+
     useEffect(()=>{
         dispatch(fetchFoodDetail(fno)) // 데이터를 서버에서 읽어서 저장
     },[])
@@ -134,9 +136,9 @@ function FoodDetail() {
                                 </td>
                             </tr>
                             <tr>
-                                <div>
-                                    {/*<MapLocation address={foodDetail.address} name={foodDetail.name}/>*/}
-                                </div>
+                                <td>
+                                    <FoodMap address={foodDetail.address} name={foodDetail.name}/>
+                                </td>
                             </tr>
                             </tbody>
                         </table>
