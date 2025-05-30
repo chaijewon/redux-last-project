@@ -18,6 +18,15 @@ function FoodFind(){
     // => 데이터는 store에서 읽어 온다
     // store에 있는 데이터 읽기
     const foodList=useSelector(state => state.foods.find_list)
+    const find=(e)=>{
+        if(fd==="")
+        {
+            fdRef.current.focus();
+            return
+        }
+        setFd(fdRef.current.value);
+
+    }
     return (
         <>
             <div className="breadcumb-area" style={{"backgroundImage": "url(/img/bg-img/breadcumb.jpg)"}}>
@@ -37,10 +46,8 @@ function FoodFind(){
                         <div className="col-12 text-center">
                             <input type={"text"} size={"25"} className={"input-group-sm"}
                              ref={fdRef}
-
-                             value={fd}
                             />
-                            <button className={"btn-sm btn-primary"}>검색</button>
+                            <button className={"btn-sm btn-primary"} onClick={find}>검색</button>
                         </div>
                     </div>
                     <div className="row" style={{"marginTop":"10px"}}>

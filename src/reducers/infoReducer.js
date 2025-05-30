@@ -1,8 +1,10 @@
-import {FETCH_INFO_LIST,RESET} from "../actions/types";
+import {FETCH_INFO_LIST,FETCH_INFO_DETAIL} from "../actions/types";
 // Map => {} , List => [] , VO => {}
 const infoState={
-    info_data:{}
+    info_data:{},
+    info_detail:{}
 }
+// infos.info_detail
 // dispatch(action) => 자동 호출
 // dispatch({type:찾기, payload:데이터}
 // ... : 복제
@@ -18,6 +20,11 @@ export default function(state=infoState, action){
             return {
                 ...state,
                 info_data: action.payload
+            }
+        case FETCH_INFO_DETAIL:
+            return {
+                ...state,
+                info_detail:action.payload
             }
         default:
             return state;

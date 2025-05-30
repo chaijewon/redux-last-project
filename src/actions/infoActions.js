@@ -22,3 +22,16 @@ export const resetState = () => dispatch => {
         type:RESET
     })
 }
+export const fetchInfoDetail = (no) => dispatch => {
+    axios.get("http://localhost/info/detail_react",{
+        params:{
+            no:no
+        }
+    }).then(res=>{
+        console.log(res.data)
+        dispatch({
+            type:FETCH_INFO_DETAIL,
+            payload:res.data
+        })
+    })
+}

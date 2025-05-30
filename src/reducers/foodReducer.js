@@ -52,6 +52,7 @@ export default function(state = foodState, action){
                 ...state,
                 find_list:action.payload
             }
+
         default:
             return state;
     }
