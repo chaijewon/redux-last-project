@@ -59,10 +59,10 @@ function NewsList(){
                                                 <table className={"table"}>
                                                     <tbody>
                                                     <tr>
-                                                        <td className={"text-left"}><h3 style={{"color":"orange"}}>{news.title}</h3></td>
+                                                        <td className={"text-left"}><h3 style={{"color":"orange"}} dangerouslySetInnerHTML={{__html: news.title}}></h3></td>
                                                     </tr>
                                                     <tr>
-                                                        <td className={"text-left"}>{news.description}</td>
+                                                        <td className={"text-left"} dangerouslySetInnerHTML={{__html: news.description}}></td>
                                                     </tr>
                                                     </tbody>
                                                 </table>
