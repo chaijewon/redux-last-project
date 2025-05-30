@@ -1,7 +1,7 @@
 import {useDispatch, useSelector} from 'react-redux'
 import {Link, useParams} from "react-router-dom";
 import {useState, useEffect, Fragment, use} from "react";
-import {fetchInfoList,resetState} from "../../actions/infoActions";
+import {fetchInfoList} from "../../actions/infoActions";
 
 /*
      let a=1

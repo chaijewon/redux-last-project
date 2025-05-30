@@ -92,7 +92,7 @@ function Header() {
                                                 <Link className="dropdown-item" to={"/info/list/1"}>부산명소</Link>
                                                 <Link className="dropdown-item" to={"/info/list/2"}>부산음식</Link>
                                                 <Link className="dropdown-item" to={"/info/list/3"}>부산쇼핑</Link>
-                                                <a className="dropdown-item" href="archive.html">검색</a>
+                                                <Link className="dropdown-item" to="/info/find">검색</Link>
                                             </div>
                                         </li>
                                         <li className="nav-item">

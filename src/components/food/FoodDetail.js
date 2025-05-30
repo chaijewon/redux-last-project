@@ -4,6 +4,7 @@ import {useNavigate,useParams} from "react-router-dom";
 import {fetchFoodDetail} from "../../actions/foodActions";
 import FoodMap from "./FoodMap";
 /* global kakao */
+// => Redux - toolkit
 // redirect , useRef , useCallback , useMemo
 // => history.back() Navigate
 /*const MapLocation=(props)=>{

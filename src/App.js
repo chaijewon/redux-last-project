@@ -15,6 +15,7 @@ import BoardDetail from "./components/board/BoardDetail";
 import BoardDelete from "./components/board/BoardDelete";
 import BoardUpdate from "./components/board/BoardUpdate";
 import InfoDetail from "./components/info/InfoDetail";
+import InfoFind from "./components/info/InfoFind";
 // <함수명> => return에 있는 HTML을 출력
 // 모든 component => 반드시 return을 포함하고 있어야 된다 (return안에는 HTML포함)
 /*
@@ -54,6 +55,7 @@ function App() {
                <Route path={"/board/delete/:no"} element={<BoardDelete/>} />
                <Route path={"/board/update/:no"} element={<BoardUpdate/>} />
                <Route path={"/info/detail/:no"} element={<InfoDetail/>} />
+               <Route path={"/info/find"} element={<InfoFind/>} />
             </Routes>
           <Footer />
         </Router>

@@ -45,7 +45,7 @@ function FoodFind(){
                     <div className="row">
                         <div className="col-12 text-center">
                             <input type={"text"} size={"25"} className={"input-group-sm"}
-                             ref={fdRef}
+                                   ref={fdRef}
                             />
                             <button className={"btn-sm btn-primary"} onClick={find}>검색</button>
                         </div>
