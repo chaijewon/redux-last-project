@@ -5,6 +5,14 @@ const server=app.listen(3355,()=>{
     console.log("Server started on http://localhost:3355");
 });
 
+// 0~65535 => 0~1023 사용중 => 1024 => port 허용
+app.all('*', function(req, res, next)
+{
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "X-Requested-With");
+    next();
+});
+
 const oracledb=require('oracledb');
 oracledb.outFormat=oracledb.OUT_FORMAT_OBJECT
 

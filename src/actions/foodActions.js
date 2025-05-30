@@ -71,4 +71,17 @@ export const fetchFoodDetail = (fno) => dispatch => {
         dispatch(action)
     })
 }
+export const fetchFoodFind=(fd) => dispatch => {
+    axios.get('http://localhost:3355/food/find',{
+        params: {
+            fd:fd
+        }
+    }).then((res) => {
+        const action={
+            type:FETCH_FOOD_FIND,
+            payload:res.data
+        }
+        dispatch(action)
+    })
+}
 

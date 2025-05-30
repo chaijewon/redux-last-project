@@ -15,6 +15,18 @@ import infoReducer from "./infoReducer";
 import boardReducer from "./boardReducer";
 // mains.main_data mains.main_detail => 변수 선택
 // 모아둔 데이터가 => state에 저장 => state관리 (store)
+/*
+state={
+      mains={
+         main_data:{}
+      }
+      foods={
+         food_list:{},
+         find_list:{},
+         food_detail:{}
+      }
+  }
+ */
 export default combineReducers({
     mains: mainReducer,
     foods: foodReducer,
