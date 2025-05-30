@@ -48,14 +48,30 @@
  */
 // dispatch(fetchMainData())
 import axios from "axios";
+import {FETCH_MAIN_DATA,NEWS_LIST} from "./types";
 export const fetchMainData = () => dispatch => {
     // 서버에서 데이터를 읽어서 => reducer로 전송
     axios.get('http://localhost/main_react').then(res => {
         const action={
-            type:'FETCH_MAIN_DATA',
+            type:FETCH_MAIN_DATA,
             payload:res.data
         }
         console.log(res.data)
         dispatch(action); // reducer로 전송
+    })
+}
+
+export const fetchNewsData =(fd) => dispatch => {
+    axios.get('http://localhost:3355/news/list',{
+        params:{
+            query:fd
+        }
+    }).then(res => {
+        const action={
+            type:NEWS_LIST,
+            payload:res.data
+        }
+        console.log(res.data)
+        dispatch(action);
     })
 }

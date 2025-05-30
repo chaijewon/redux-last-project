@@ -18,3 +18,6 @@ export const BOARD_UPDATE='BOARD_UPDATE'
 export const BOARD_DELETE='BOARD_DELETE'
 export const BOARD_INSERT='BOARD_INSERT'
 export const BOARD_UPDATE_OK='BOARD_UPDATE_OK'
+// int a=10
+//news
+export const NEWS_LIST='NEWS_LIST'
